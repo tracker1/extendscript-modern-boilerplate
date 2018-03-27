@@ -1,0 +1,44 @@
+{
+  "name": "edna-indesign-server",
+  "private": true,
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/node": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-stage-0": "^7.0.0-beta.42",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^8.0.0-beta.2",
+    "babel-plugin-check-es2015-constants": "^6.22.0",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+    "babel-plugin-transform-es3-modules-literals": "0.0.3",
+    "cross-env": "^5.1.4",
+    "file-loader": "^1.1.11",
+    "jest": "^22.4.2",
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.8.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-plugin-replace": "^1.1.1",
+    "wrapper-webpack-plugin": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://tfs.berkadia.com/tfs/Enterprise/Production/_git/inDesign-core"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist/*",
+    "test": "jest",
+    "prebuild": "npm run clean",
+    "build": "babel-node scripts/build.js",
+    "prestart": "babel-node scripts/prestart.js",
+    "start": "npm run watch",
+    "watch": "cross-env WEBPACK_WATCH=1 webpack --watch --mode development"
+  }
+}

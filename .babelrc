@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      },
+      "loose": true
+    }],
+    "@babel/preset-stage-0"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-modules-commonjs", { "allowTopLevelThis": true }]
+  ],
+  "env": {
+    "TEST": {
+    }
+  }
+}
