@@ -1,2 +1,6 @@
 // TODO: Implementation Details
-export default jest.fn().mockImplementation(() => ({/* implementation */}));
+const helper = {
+  mockClear: () => Object.values(helper).filter(fn => fn && fn.mockClear).forEach(fn => fn.mockClear()),
+};
+
+export default helper;
