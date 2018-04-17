@@ -2,13 +2,13 @@ import $ from 'helper';
 import File from 'file';
 import Folder from 'folder';
 
-import os from 'os';
+import path from 'path';
 
 export const exists = filePath => {
-  filePath = normalize(String(filePath));
+  filePath = path.normalize(String(filePath));
   return new File(filePath).exists || new Folder(filePath).exists;
 }
 
 export default {
-  normalize: normalizePath,
+  exists,
 }

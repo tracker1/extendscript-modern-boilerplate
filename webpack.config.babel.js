@@ -132,7 +132,8 @@ module.exports = {
           } catch(error) {
             error = Object.assign(error, {
               message: error.message, 
-              stack: error.stack || $.stack || 'NO STACK AVAILABLE' 
+              stack: error.stack || $.stack || 'NO STACK AVAILABLE',
+              source: undefined
             });
             JSON.stringify({ error: error }, null, LOCAL_EXECUTION ? 4 : undefined);
           }
